@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.form-wrapper{
+  top: 50%;
+  left: 50%; 
+  border: 1px solid grey;
+  border-radius: 10px;
+  max-width: 600px;
+  min-width: 310px;
+  transform: translate(100vh, -50%);
+  padding: 10px;
+  position: absolute;
+  background-color: white;
+
+}
+
+.form-wrapper.active-form{
+  transform: translate(-50%, -50%);
+  transition-delay: 1.5s ;
+  transition: transform 1.5s ease-in-out; 
+}
+
+.form-wrapper.remove-form{
+  transform: translate(-200vh,-50%);
+  transition: transform 1.5s ease-in-out; 
+}
+
+.calendar{
+  top: 50% !important;
+  left: 50% !important;
+  transform: scaleY(0) translate(-50%,-50%) !important ;
+  animation: normal !important;
+}
+.calendar.visible{
+  transform:scaleY(1) translate(-50%,-50%) !important  ;
+}
+
+.table-bordered thead td, .table-bordered thead th{
+   cursor: pointer;
+}

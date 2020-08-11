@@ -1,0 +1,28 @@
+version: '3'
+services:
+
+    db:
+      image: "postgres" # use latest official postgres version
+      env_file:
+        - database.env # configure postgres
+      volumes:
+        - database-data:/var/lib/postgresql/data:rw
+      ports:
+        - "5432:5432"
+
+    app:
+      build:
+        context: ./
+        dockerfile: ./Dockerfile
+      restart: always 
+      image: app
+      container_name: app
+      depends_on: 
+          - db    
+      ports:
+          - "5000:5000"
+volumes:
+  database-data:
+  
+ 
+         
